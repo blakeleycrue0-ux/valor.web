@@ -1,332 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Femenino Santa Ponsa - Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Agencia Web</title>
+    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+        body{
+            background:#f5f5f5;
+            color:#333;
+        }
 
-<style>
+        header{
+            background:white;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter', sans-serif;
-}
+        .logo img{
+            width:120px;
+        }
 
-html, body{
-    width:100%;
-    overflow-x:hidden;
-}
+        nav a{
+            text-decoration:none;
+            color:#333;
+            margin-left:20px;
+            font-weight:bold;
+        }
 
-body{
-    background:black;
-    color:white;
-}
+        .hero{
+            text-align:center;
+            padding:80px 20px;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            color:white;
+        }
 
-/* HEADER */
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:85px;
-    background:#000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 35px;
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
+        .hero h1{
+            font-size:48px;
+            margin-bottom:20px;
+        }
 
-.header-left{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
+        .hero p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
 
-.logo{
-    height:45px;
-}
+        .btn{
+            background:white;
+            color:#333;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:30px;
+            font-weight:bold;
+        }
 
-.club-name{
-    font-family:'Montserrat', sans-serif;
-    font-size:28px;
-    font-weight:900;
-    text-transform:uppercase;
-}
+        .services{
+            padding:60px 20px;
+            text-align:center;
+        }
 
-.nav-desktop{
-    display:flex;
-    gap:30px;
-}
+        .services h2{
+            margin-bottom:40px;
+        }
 
-.nav-desktop a{
-    color:white;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:700;
-    text-transform:uppercase;
-}
+        .cards{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
 
-/* USER */
-.user-area{
-    display:flex;
-    align-items:center;
-}
+        .card{
+            background:white;
+            width:300px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+        }
 
-.user-btn{
-    background:white;
-    color:black;
-    border:none;
-    padding:8px 14px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:800;
-    cursor:pointer;
-    text-transform:uppercase;
-    white-space:nowrap;
-}
+        .card h3{
+            margin-bottom:15px;
+        }
 
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-    background:
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),
-    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018");
-    background-size:cover;
-    background-position:center;
-}
+        .price{
+            font-size:35px;
+            color:#4facfe;
+            margin-bottom:20px;
+        }
 
-.hero h1{
-    font-family:'Montserrat', sans-serif;
-    font-size:70px;
-    font-weight:900;
-    text-transform:uppercase;
-}
+        .how{
+            background:#fff;
+            padding:60px 20px;
+            text-align:center;
+        }
 
-/* MATCHES */
-.matches-section{
-    background:#000;
-    padding:100px 0;
-}
+        .contact{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:60px 20px;
+        }
 
-.matches-scroll{
-    display:flex;
-    gap:25px;
-    overflow-x:auto;
-    padding:30px;
-    scroll-snap-type:x mandatory;
-}
+        .contact a{
+            display:inline-block;
+            margin-top:20px;
+            background:#25D366;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:30px;
+        }
 
-.matches-scroll::-webkit-scrollbar{
-    display:none;
-}
-
-/* MATCH CARD */
-.match-card.big{
-    min-width:340px;
-    height:200px;
-    background:rgba(17,17,17,0.75);
-    backdrop-filter: blur(12px);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:0;
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    position:relative;
-    overflow:hidden;
-    transition:0.3s;
-}
-
-.match-card.big:hover{
-    transform:translateY(-8px);
-}
-
-.match-card.big::after{
-    content:"";
-    position:absolute;
-    bottom:-1px;
-    right:-1px;
-    width:160px;
-    height:160px;
-    background: linear-gradient(
-        135deg,
-        transparent 48%,
-        #000 50%
-    );
-    pointer-events:none;
-}
-
-.match-card.big h3{
-    font-family:'Montserrat', sans-serif;
-    font-size:20px;
-    font-weight:900;
-    text-transform:uppercase;
-}
-
-.match-card.big p{
-    font-size:14px;
-    color:#ccc;
-}
-
-.match-card.big .score{
-    font-size:30px;
-    font-weight:900;
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-
-    header{
-        height:auto;
-        padding:12px 15px;
-        flex-wrap:wrap;
-        gap:10px;
-    }
-
-    .header-left{
-        gap:10px;
-    }
-
-    .logo{
-        height:32px;
-    }
-
-    .club-name{
-        font-size:18px;
-    }
-
-    .nav-desktop{
-        display:none;
-    }
-
-    .user-btn{
-        padding:6px 12px;
-        font-size:11px;
-    }
-
-    .hero{
-        padding:0 20px;
-    }
-
-    .hero h1{
-        font-size:42px;
-        line-height:1.1;
-    }
-
-    .matches-section{
-        padding:60px 0;
-    }
-
-    .matches-scroll{
-        padding:15px;
-        gap:15px;
-    }
-
-    .match-card.big{
-        min-width:280px;
-        height:180px;
-        padding:20px;
-    }
-
-    .match-card.big h3{
-        font-size:18px;
-    }
-
-    .match-card.big .score{
-        font-size:26px;
-    }
-
-    .match-card.big::after{
-        width:90px;
-        height:90px;
-    }
-}
-
-</style>
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#222;
+            color:white;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
 
-    <div class="header-left">
-        <img src="Logoclub.png" class="logo">
-        <div class="club-name">FEMENINO</div>
-    </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#como">Cómo trabajo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <nav class="nav-desktop">
-        <a href="#">Noticias</a>
-        <a href="equipos.html">Equipos</a>
-        <a href="#">Tienda</a>
-    </nav>
+    <section class="hero" id="inicio">
+        <h1>Webs económicas para negocios y personas</h1>
+        <p>Creo páginas web rápidas, bonitas y económicas para ayudarte a crecer online.</p>
+        <a href="#contacto" class="btn">Solicitar web</a>
+    </section>
 
-    <div class="user-area" id="userArea">
-        <button class="user-btn" onclick="loginAction()">LOG IN</button>
-    </div>
+    <section class="services" id="servicios">
+        <h2>Servicios</h2>
 
-</header>
+        <div class="cards">
 
-<section class="hero">
-    <h1>FEMENINO<br>SANTA PONSA</h1>
-</section>
+            <div class="card">
+                <h3>Web Básica</h3>
+                <div class="price">20€</div>
+                <p>Landing page simple con información de contacto.</p>
+            </div>
 
-<section class="matches-section">
+            <div class="card">
+                <h3>Web Profesional</h3>
+                <div class="price">30€</div>
+                <p>Varias secciones, diseño más personalizado.</p>
+            </div>
 
-<div class="matches-scroll">
+            <div class="card">
+                <h3>Web Premium</h3>
+                <div class="price">40€</div>
+                <p>Formulario, extras y diseño más avanzado.</p>
+            </div>
 
-    <div class="match-card big">
-        <h3>SP vs Palma</h3>
-        <p>Amistoso</p>
-        <div class="score">3 - 1</div>
-    </div>
+        </div>
+    </section>
 
-    <div class="match-card big">
-        <h3>SP vs Barça B</h3>
-        <p>Liga</p>
-        <div class="score">2 - 2</div>
-    </div>
+    <section class="how" id="como">
+        <h2>¿Cómo trabajo?</h2>
+        <br>
+        <p>1. Me contactas</p>
+        <p>2. Me explicas tu idea</p>
+        <p>3. Creo tu web</p>
+        <p>4. La entrego rápidamente</p>
+    </section>
 
-</div>
+    <section class="contact" id="contacto">
+        <h2>Contacto</h2>
+        <p>Escríbeme por WhatsApp para empezar tu web hoy mismo.</p>
+        <a href="https://wa.me/TUNUMERO">Hablar por WhatsApp</a>
+    </section>
 
-</section>
-
-<script>
-
-const user = localStorage.getItem("user");
-const userArea = document.getElementById("userArea");
-
-if(user){
-    userArea.innerHTML = `
-        <button class="user-btn" onclick="logout()">${user}</button>
-    `;
-}
-
-function loginAction(){
-    if(user){
-        window.location.href = "home.html";
-    } else {
-        window.location.href = "login.html";
-    }
-}
-
-function logout(){
-    localStorage.removeItem("user");
-    window.location.href = "login.html";
-}
-
-</script>
-
-</body>
-</html>
+    <footer>
+        <p>© 2026 Tu Agencia Web - Todos los derechos reservados</p>
+    </footer>
 
 </body>
 </html>
